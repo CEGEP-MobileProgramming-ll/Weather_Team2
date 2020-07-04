@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/drawerLayout">
+    android:id="@+id/drawerLayout"
+    android:background="@drawable/gradient1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
             android:background="@color/colorPrimary"
-            app:title="Weather"
+            app:title="@string/Title"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
             />
         <fragment
