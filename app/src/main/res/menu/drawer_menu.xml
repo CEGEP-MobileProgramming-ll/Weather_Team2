@@ -3,5 +3,11 @@
     <group android:checkableBehavior="single">
     <item android:id="@+id/c_montreal"
         android:title="Montreal" />
+     <item android:id="@+id/c_london"
+        android:title="London"/>
+     <item android:id="@+id/c_abd"
+        android:title="Ahmedabad"/>
+     <item android:id="@+id/c_ny"
+        android:title="New York"/>
     </group>
 </menu>
