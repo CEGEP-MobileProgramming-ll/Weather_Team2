@@ -50,7 +50,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -112,13 +113,102 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_mid1"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:layout_marginTop="25dp"
+        android:baselineAligned="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/lbl_windDire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wind_direction"
+            android:labelFor="@+id/txt_windDire"
+            android:textColor="@color/white" />
+        <ImageView
+            android:id="@+id/img_windDire"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_compass"
+            android:contentDescription="@string/des_winddirection" />
+        <TextView
+            android:id="@+id/txt_windDire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/lbl_windSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind_speed"
+                android:labelFor="@+id/txt_windSpeed"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/img_windSpeed"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_windy9"
+                android:contentDescription="@string/des_winddirection" />
+            <TextView
+                android:id="@+id/txt_windSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/lbl_predict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/predictability"
+                android:labelFor="@+id/txt_predict"
+                android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/img_predict"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_humidity"
+                android:contentDescription="@string/des_predict" />
+            <TextView
+                android:id="@+id/txt_predict"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        >
+        android:baselineAligned="false">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

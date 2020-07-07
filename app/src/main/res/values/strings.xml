@@ -11,4 +11,10 @@
     <string name="description_day3">Day3</string>
     <string name="description_day4">Day4</string>
     <string name="description_day555">Day5</string>
+    <string name="wind_direction">Wind Direction</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="predictability">Predictability</string>
+    <string name="des_winddirection">img_windDirection</string>
+    <string name="des_winddirection">img_windDirection</string>
+    <string name="des_predict">img_predict</string>
 </resources>
