@@ -15,6 +15,12 @@
     <string name="wind_speed">Wind Speed</string>
     <string name="predictability">Predictability</string>
     <string name="des_winddirection">img_windDirection</string>
-    <string name="des_winddirection">img_windDirection</string>
     <string name="des_predict">img_predict</string>
+    <string name="humidity">Humidity</string>
+    <string name="visibility">Visibility</string>
+    <string name="air_pressure">Air Pressure</string>
+    <string name="des_humid">img_humid</string>
+    <string name="des_windspeed">img_windSpeed</string>
+    <string name="des_visibility">img_visibility</string>
+    <string name="des_pressure">img_pressure</string>
 </resources>

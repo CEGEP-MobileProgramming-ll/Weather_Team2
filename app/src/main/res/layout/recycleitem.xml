@@ -84,7 +84,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
-
                 <TextView
                     android:id="@+id/txt_curTemp"
                     android:layout_width="wrap_content"
@@ -168,12 +167,12 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_windy9"
-                android:contentDescription="@string/des_winddirection" />
+                android:contentDescription="@string/des_windspeed"/>
             <TextView
                 android:id="@+id/txt_windSpeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
@@ -188,20 +187,119 @@
                 android:layout_height="wrap_content"
                 android:text="@string/predictability"
                 android:labelFor="@+id/txt_predict"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_predict"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_humidity"
-                android:contentDescription="@string/des_predict" />
+                android:contentDescription="@string/des_predict"/>
             <TextView
                 android:id="@+id/txt_predict"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/divider1"
+        app:layout_constraintTop_toBottomOf="@+id/layout_mid1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_mid2"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1"
+        android:layout_marginTop="5dp"
+        android:baselineAligned="false">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/lbl_humid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity"
+                android:labelFor="@+id/txt_humid"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:id="@+id/img_humid"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_hum"
+                android:contentDescription="@string/des_humid"/>
+            <TextView
+                android:id="@+id/txt_humid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/lbl_visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/visibility"
+                android:labelFor="@+id/txt_visibility"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:id="@+id/img_visibility"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_witness"
+                android:contentDescription="@string/des_visibility"/>
+            <TextView
+                android:id="@+id/txt_visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/lbl_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/air_pressure"
+                android:labelFor="@+id/txt_pressure"
+                android:textColor="@color/white"/>
+            <ImageView
+                android:id="@+id/img_pressure"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_gauge"
+                android:contentDescription="@string/des_pressure"/>
+            <TextView
+                android:id="@+id/txt_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/layout_bottom"
@@ -219,17 +317,17 @@
             android:id="@+id/txt_state1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
         <ImageView
             android:id="@+id/img_day1"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:contentDescription="@string/description_day1" />
+            android:contentDescription="@string/description_day1"/>
         <TextView
             android:id="@+id/txt_day1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -241,7 +339,7 @@
                 android:id="@+id/txt_state2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_day2"
                 android:layout_width="60dp"
@@ -251,7 +349,7 @@
                 android:id="@+id/txt_day2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -263,7 +361,7 @@
                 android:id="@+id/txt_state3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_day3"
                 android:layout_width="60dp"
@@ -273,7 +371,7 @@
                 android:id="@+id/txt_day3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -285,7 +383,7 @@
                 android:id="@+id/txt_state4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_day4"
                 android:layout_width="60dp"
@@ -295,7 +393,7 @@
                 android:id="@+id/txt_day4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -307,7 +405,7 @@
                 android:id="@+id/txt_state5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_day5"
                 android:layout_width="60dp"
@@ -317,8 +415,7 @@
                 android:id="@+id/txt_day5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"/>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
