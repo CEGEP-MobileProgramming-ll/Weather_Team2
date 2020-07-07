@@ -6,4 +6,9 @@
     <string name="min_temp">Min Temp</string>
     <string name="max_temp">Max Temp</string>
     <string name="decription_mainImage">Main Weather State Image.</string>
+    <string name="description_day1">Day1</string>
+    <string name="description_day2">Day2</string>
+    <string name="description_day3">Day3</string>
+    <string name="description_day4">Day4</string>
+    <string name="description_day555">Day5</string>
 </resources>
