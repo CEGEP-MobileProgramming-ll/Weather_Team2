@@ -1,5 +1,7 @@
 package com.example.weather;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -9,10 +11,13 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public Toolbar toolbar;
     public DrawerLayout drawerLayout;
@@ -25,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
         setupNavigation();
     }
 
-    public void setActionBarTitle(String title) {
+
+    public void setActionBarTitle(String title){
         getSupportActionBar().setTitle(title);
     }
+
 
     public void setupNavigation(){
         toolbar=findViewById(R.id.toolbar);
@@ -39,8 +46,28 @@ public class MainActivity extends AppCompatActivity {
         navController= Navigation.findNavController(this,R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this,navController,drawerLayout);
         NavigationUI.setupWithNavController(navigationView,navController);
-       // navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);
     }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        menuItem.setCheckable(true);
+        drawerLayout.closeDrawers();
+        int id=menuItem.getItemId();
+        Bundle b=new Bundle();
+        switch (id){
+            case R.id.c_montreal:
+                b.putInt("Country",R.id.c_montreal);
+                Toast.makeText(this, "Montreal's weather is showing!"+b.getInt("Country"), Toast.LENGTH_SHORT).show();
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                Log.d("MainFragment","id="+b);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+        }
+        return true;
+    }
+
 
 
     @Override
