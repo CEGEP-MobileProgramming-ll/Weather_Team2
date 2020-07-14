@@ -68,7 +68,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-
+            holder.textDays[i].setOnClickListener(detailData);
+            holder.textState[i].setOnClickListener(detailData);
             holder.imageViews[i].setOnClickListener(detailData);
         }
     }
@@ -79,10 +80,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             Intent intent=new Intent(v.getContext(), RecycleItem.class);
             Bundle bundle=new Bundle();
             bundle.putString("Title",title);
-            switch (v.getId()) {
-                case R.id.img_day1:
-                    Log.d("Adapter", "txt1 pressed");
-                    bundle.putParcelable("Key", arrayListWeather.get(1));
+            switch (v.getId()){
+                case R.id.txt_day1: case R.id.txt_state1: case R.id.img_day1:
+                    Log.d("Adapter","txt1 pressed");
+                    bundle.putParcelable("Key",arrayListWeather.get(1));
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
+                    break;
+                case R.id.txt_day2: case R.id.txt_state2: case R.id.img_day2:
+                    Log.d("Adapter","txt2 pressed");
+                    bundle.putParcelable("Key",arrayListWeather.get(2));
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
+                    break;
+                case R.id.txt_day3: case R.id.txt_state3: case R.id.img_day3:
+                    Log.d("Adapter","txt3 pressed");
+                    bundle.putParcelable("Key",arrayListWeather.get(3));
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
+                    break;
+                case R.id.txt_day4: case R.id.txt_state4: case R.id.img_day4:
+                    Log.d("Adapter","txt4 pressed");
+                    bundle.putParcelable("Key",arrayListWeather.get(4));
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
+                    break;
+                case R.id.txt_day5: case R.id.txt_state5: case R.id.img_day5:
+                    Log.d("Adapter","txt5 pressed");
+                    bundle.putParcelable("Key",arrayListWeather.get(5));
                     intent.putExtras(bundle);
                     v.getContext().startActivity(intent);
                     break;
