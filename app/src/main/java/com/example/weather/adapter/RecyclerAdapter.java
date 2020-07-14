@@ -1,5 +1,6 @@
 package com.example.weather.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.weather.HelpingFunction;
 import com.example.weather.POJO.ConsolidatedWeather_;
 import com.example.weather.R;
 
@@ -20,6 +22,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     private ArrayList<ConsolidatedWeather_> arrayListWeather;
     private Context context;
     private String title;
+    HelpingFunction d=new HelpingFunction();
+    String url1="https://www.metaweather.com/static/img/weather/png/64/";
+    String url2=".png";
 
     public RecyclerAdapter(ArrayList<ConsolidatedWeather_> arrayListWeather, Context context, String title) {
         this.arrayListWeather = arrayListWeather;
@@ -34,8 +39,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder holder, int position) {
+        holder.txt_curTemp.setText(""+d.round(arrayListWeather.get(position).getTheTemp(),2)+"°");
+        holder.txt_minTemp.setText(""+d.round(arrayListWeather.get(position).getMinTemp(),2)+"°");
+        holder.txt_maxTemp.setText(""+d.round(arrayListWeather.get(position).getMaxTemp(),2)+"°");
+        holder.txt_windDire.setText(""+arrayListWeather.get(position).getWindDirectionCompass());
+        holder.txt_windSpeed.setText(""+d.round(arrayListWeather.get(position).getWindSpeed(),2)+" m/h");
+        holder.txt_windDire.setText(""+arrayListWeather.get(position).getWindDirectionCompass());
+        holder.txt_predict.setText(""+arrayListWeather.get(position).getPredictability()+"%");
+        holder.txt_humid.setText(""+arrayListWeather.get(position).getHumidity()+"%");
+        holder.txt_visibility.setText(""+d.round(arrayListWeather.get(position).getVisibility(),2)+" miles");
+        holder.txt_pressure.setText(""+arrayListWeather.get(position).getAirPressure()+" mbar");
 
     }
 
