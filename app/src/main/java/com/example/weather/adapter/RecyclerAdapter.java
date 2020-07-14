@@ -2,6 +2,9 @@ package com.example.weather.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +14,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.weather.HelpingFunction;
 import com.example.weather.POJO.ConsolidatedWeather_;
 import com.example.weather.R;
+import com.example.weather.RecycleItem;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
@@ -53,7 +59,38 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         holder.txt_visibility.setText(""+d.round(arrayListWeather.get(position).getVisibility(),2)+" miles");
         holder.txt_pressure.setText(""+arrayListWeather.get(position).getAirPressure()+" mbar");
 
+        for(int i=0;i<6;i++){
+            holder.textState[i].setText(arrayListWeather.get(i).getWeatherStateName());
+            Glide.with(context).load(url1+arrayListWeather.get(i).getWeatherStateAbbr()+url2).into(holder.imageViews[i]);
+            Log.d("Adapter","state"+arrayListWeather.get(i).getWeatherStateAbbr());
+            try {
+                holder.textDays[i].setText(d.getDayStringOld(arrayListWeather.get(i).getApplicableDate()));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            holder.imageViews[i].setOnClickListener(detailData);
+        }
     }
+
+    View.OnClickListener detailData = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(v.getContext(), RecycleItem.class);
+            Bundle bundle=new Bundle();
+            bundle.putString("Country",title);
+            switch (v.getId()) {
+                case R.id.img_day1:
+                    Log.d("Adapter", "txt1 pressed");
+                    bundle.putParcelable("Key", arrayListWeather.get(1));
+                    intent.putExtras(bundle);
+                    v.getContext().startActivity(intent);
+                    break;
+            }
+        }
+    };
+
+
 
     @Override
     public int getItemCount() {
