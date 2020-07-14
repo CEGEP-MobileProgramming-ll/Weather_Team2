@@ -18,6 +18,9 @@ import android.view.ViewGroup;
 import com.example.weather.POJO.ConsolidatedWeather;
 import com.example.weather.POJO.ConsolidatedWeather_;
 import com.example.weather.adapter.RecyclerAdapter;
+import com.example.weather.retrofit.GetDataService;
+import com.example.weather.retrofit.RetrofitClientInstance;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -31,6 +34,7 @@ public class MainFragment extends Fragment {
     RecyclerAdapter recyclerAdapter;
     ArrayList<ConsolidatedWeather_> wArrayList;
     private boolean connected;
+    int a=R.id.c_montreal;
 
     public MainFragment() {
         // Required empty public constructor
@@ -44,6 +48,11 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if(getArguments()!=null){
+            a=getArguments().getInt("Country");
+        }
+        Log.d("MainFragment","id="+a);
+        decision(a);
     }
 
     @Override
@@ -52,6 +61,40 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
+
+    private void decision(int b) {
+        if(checkInternetConnection()){
+            GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
+            Call<ConsolidatedWeather> call;
+            Log.d("MainFragment","decision="+b);
+            switch (b){
+                case R.id.c_montreal: call = service.getMontrealWeatherData();
+                    Log.d("MainFragment","idmon="+"getMon");
+                    loadJson(call);
+                    break;
+            }
+        }else{
+            noInternetConnection();
+        }
+
+    }
+
+    private void noInternetConnection() {
+        final Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.mainFragment),"No Internet Connection!!!",Snackbar.LENGTH_INDEFINITE);
+        snackbar.setAction("Retry!", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(checkInternetConnection()){
+                    snackbar.dismiss();
+                    decision(a);
+                }else {
+                    noInternetConnection();
+                    // showDialog();
+                }
+            }
+        }).show();
+    }
+
 
 
     public boolean checkInternetConnection() {
