@@ -34,6 +34,7 @@ public class MainFragment extends Fragment {
     RecyclerAdapter recyclerAdapter;
     ArrayList<ConsolidatedWeather_> wArrayList;
     private boolean connected;
+    String title;
     int a=R.id.c_montreal;
 
     public MainFragment() {
@@ -117,7 +118,11 @@ public class MainFragment extends Fragment {
                 try {
                     ConsolidatedWeather weather = response.body();
                     wArrayList = new ArrayList<>(weather.getConsolidatedWeather());
-                    generateView(wArrayList);
+                    title=weather.getTitle();
+                    Log.d("main Fragment","jsond"+title);
+                    ((MainActivity) getActivity())
+                            .setActionBarTitle(title);
+                    generateView(wArrayList,title);
 
                 }catch (NullPointerException e)
                 {
@@ -134,10 +139,10 @@ public class MainFragment extends Fragment {
         });
     }
 
-    public void generateView(ArrayList<ConsolidatedWeather_> weatherS)
+    public void generateView(ArrayList<ConsolidatedWeather_> weatherS, String title)
     {
 
-        recyclerAdapter = new RecyclerAdapter(weatherS, getActivity().getApplicationContext());
+        recyclerAdapter = new RecyclerAdapter(weatherS, getActivity().getApplicationContext(),title);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.VERTICAL,false);
         recyclerView = getView().findViewById(R.id.main_recyclerView);
         recyclerView.setLayoutManager(layoutManager);

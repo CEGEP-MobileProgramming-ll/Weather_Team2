@@ -17,10 +17,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     private ArrayList<ConsolidatedWeather_> arrayListWeather;
     private Context context;
+    private String title;
 
-    public RecyclerAdapter(ArrayList<ConsolidatedWeather_> arrayListWeather, Context context) {
+    public RecyclerAdapter(ArrayList<ConsolidatedWeather_> arrayListWeather, Context context, String title) {
         this.arrayListWeather = arrayListWeather;
         this.context = context;
+        this.title = title;
     }
 
     @NonNull
