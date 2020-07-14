@@ -64,6 +64,56 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.d("MainFragment","id="+b);
                 navController.navigate(R.id.mainFragment,b);
                 break;
+            case R.id.c_london:
+                Toast.makeText(this,"London's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_london);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                Log.d("MainFragment","id="+b);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_abd:
+                Toast.makeText(this,"Ahmedabad's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_abd);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                Log.d("MainFragment","id="+b);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_ny:
+                Toast.makeText(this,"New York's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_ny);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_chicago:
+                Toast.makeText(this,"Chicago's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_chicago);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_mumbai:
+                Toast.makeText(this,"Mumbai's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_mumbai);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_toronto:
+                Toast.makeText(this,"Toronto's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_toronto);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_vancouver:
+                Toast.makeText(this,"vancouver's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_vancouver);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
+            case R.id.c_surat:
+                Toast.makeText(this,"Surat's weather is showing!",Toast.LENGTH_SHORT).show();
+                b.putInt("Country",R.id.c_surat);
+                navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+                navController.navigate(R.id.mainFragment,b);
+                break;
         }
         return true;
     }

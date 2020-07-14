@@ -73,6 +73,38 @@ public class MainFragment extends Fragment {
                     Log.d("MainFragment","idmon="+"getMon");
                     loadJson(call);
                     break;
+                case R.id.c_london:  call = service.getLondonWeatherData();
+                    Log.d("MainFragment","idlon="+"getLondon");
+                    loadJson(call);
+                    break;
+                case R.id.c_abd:  call = service.getAhmedabadWeatherData();
+                    Log.d("MainFragment","idlon="+"getLondon");
+                    loadJson(call);
+                    break;
+                case R.id.c_ny:  call = service.getNewyorkWeatherData();
+                    Log.d("MainFragment","Ny="+"getLondon");
+                    loadJson(call);
+                    break;
+                case R.id.c_toronto:  call = service.getTorontoWeatherData();
+                    Log.d("MainFragment","idlon="+"getToronto");
+                    loadJson(call);
+                    break;
+                case R.id.c_vancouver:  call = service.getVancouverWeatherData();
+                    Log.d("MainFragment","idlon="+"getVancouver");
+                    loadJson(call);
+                    break;
+                case R.id.c_mumbai:  call = service.getMumbaiWeatherData();
+                    Log.d("MainFragment","idlon="+"getMumbai");
+                    loadJson(call);
+                    break;
+                case R.id.c_surat:  call = service.getSuratWeatherData();
+                    Log.d("MainFragment","idlon="+"getSurat");
+                    loadJson(call);
+                    break;
+                case R.id.c_chicago:  call = service.getChicagoWeatherData();
+                    Log.d("MainFragment","idlon="+"getLondon");
+                    loadJson(call);
+                    break;
             }
         }else{
             noInternetConnection();
