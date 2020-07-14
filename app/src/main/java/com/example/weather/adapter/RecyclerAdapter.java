@@ -78,7 +78,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         public void onClick(View v) {
             Intent intent=new Intent(v.getContext(), RecycleItem.class);
             Bundle bundle=new Bundle();
-            bundle.putString("Country",title);
+            bundle.putString("Title",title);
             switch (v.getId()) {
                 case R.id.img_day1:
                     Log.d("Adapter", "txt1 pressed");
