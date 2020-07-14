@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@android:color/transparent">
         <LinearLayout
             android:layout_width="match_parent"
@@ -138,8 +138,8 @@
             android:textColor="@color/white" />
         <ImageView
             android:id="@+id/img_windDire"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:src="@drawable/ic_compass"
             android:contentDescription="@string/des_winddirection" />
         <TextView
@@ -165,8 +165,8 @@
                 android:textColor="@color/white" />
             <ImageView
                 android:id="@+id/img_windSpeed"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/ic_windy9"
                 android:contentDescription="@string/des_windspeed"/>
             <TextView
@@ -191,8 +191,8 @@
                 android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_predict"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/ic_humidity"
                 android:contentDescription="@string/des_predict"/>
             <TextView
@@ -236,8 +236,8 @@
                 android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_humid"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/ic_hum"
                 android:contentDescription="@string/des_humid"/>
             <TextView
@@ -263,8 +263,8 @@
                 android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_visibility"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/ic_witness"
                 android:contentDescription="@string/des_visibility"/>
             <TextView
@@ -289,8 +289,8 @@
                 android:textColor="@color/white"/>
             <ImageView
                 android:id="@+id/img_pressure"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/ic_gauge"
                 android:contentDescription="@string/des_pressure"/>
             <TextView
@@ -310,7 +310,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@android:color/transparent">
 
     <LinearLayout
