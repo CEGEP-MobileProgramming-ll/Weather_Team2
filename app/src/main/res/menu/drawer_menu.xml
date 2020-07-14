@@ -9,5 +9,15 @@
         android:title="Ahmedabad"/>
      <item android:id="@+id/c_ny"
         android:title="New York"/>
+     <item android:id="@+id/c_toronto"
+            android:title="Toronto"/>
+     <item android:id="@+id/c_mumbai"
+            android:title="Mumbai"/>
+     <item android:id="@+id/c_surat"
+            android:title="Surat"/>
+     <item android:id="@+id/c_vancouver"
+            android:title="Vancouver"/>
+     <item android:id="@+id/c_chicago"
+            android:title="Chicago"/>
     </group>
 </menu>
