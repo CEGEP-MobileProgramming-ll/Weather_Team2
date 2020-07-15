@@ -113,7 +113,7 @@ public class MainFragment extends Fragment {
     }
 
     private void noInternetConnection() {
-        final Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.mainFragment),"No Internet Connection!!!",Snackbar.LENGTH_INDEFINITE);
+        final Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.fragMain),"No Internet Connection!!!",Snackbar.LENGTH_INDEFINITE);
         snackbar.setAction("Retry!", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +122,6 @@ public class MainFragment extends Fragment {
                     decision(a);
                 }else {
                     noInternetConnection();
-                    // showDialog();
                 }
             }
         }).show();
